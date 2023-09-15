@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regexp golf</title>
+</head>
+<body>
+    <script>
+// For each of the following items, write a regular expression to test whether any
+// of the given substrings occur in a string. The regular expression should match
+// only strings containing one of the substrings described
+let pattern;
+let text;
+let result;
+// 1. car and cat
+pattern = /car|cat/gi
+text = 'This is a car'
+result = pattern.test(text)
+// console.log(result);
+// 2. pop and prop
+pattern = /pop|prop/gi
+text = 'This is a props'
+result = pattern.test(text)
+// console.log(result);
+// 3. ferret, ferry, and ferrari
+pattern = /ferret|ferry|ferrari/gi
+text = 'This is a ferrari'
+result = pattern.test(text)
+// console.log(result);
+// 4. Any word ending in ious
+pattern = /\w+ious/gi
+text = 'This is a gracious'
+result = pattern.test(text)
+// console.log(result);
+// 5. A whitespace character followed by a period, comma, colon, or semicolon
+pattern = /\s+[\.,:;]/gi
+text = '    .,:'
+result = pattern.test(text)
+// console.log(result);
+// 6. A word longer than six letters
+pattern = /\w{7,}/gi
+text = 'This is a carcas'
+result = pattern.test(text)
+// console.log(result);
+// 7. A word without the letter e (or E)\
+pattern = /^[^eE]+$/
+text = 'This is a carcas'
+result = pattern.test(text)
+console.log(result);
+
+</script>
+</body>
+</html>

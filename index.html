@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+</head>
+<body>
+    <script>
+        function collectEmail(input = prompt("Please input your email")){
+            let pattern = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/
+            let result = pattern.test(input)
+            if(result){
+                result = input.replace(pattern, `*****@****`)
+                alert(`Here's your email: ${result}`);
+                alert(`Thank you!!`)
+            }else{
+                alert(`${input} is not a valid email address!`)
+            }
+        }
+        collectEmail()
+    </script>
+</body>
+</html>

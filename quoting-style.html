@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex-Quoting-style</title>
+</head>
+
+<body>
+
+    <script>
+        // Imagine you have written a story and used single quotation marks throughout
+        // to mark pieces of dialogue. Now you want to replace all the dialogue quotes
+        // with double quotes, while keeping the single quotes used in contractions like
+        // aren’t.
+        // Think of a pattern that distinguishes these two kinds of quote usage and
+        // craft a call to the replace method that does the proper replacement.
+
+        let pattern = /(\b'\b)|'/g    //To match all the single quote
+        let story = `'It's a beautiful day!'`
+        let doubleQuotedStory =  story.replace(pattern, function(match, p1){
+            // If the match is a single quote surrounded by word boundaries, return it as is.
+            return p1? p1: `"`
+        })
+        console.log(doubleQuotedStory);
+    </script>
+</body>
+
+</html>
